@@ -12,6 +12,7 @@ import { getFriendsByUserId } from '@/helpers/get-friends-by-user-id'
 import SidebarChatList from '@/components/SidebarChatList'
 import MobileChatLayout from '@/components/MobileChatLayout'
 import { SidebarOption } from '@/types/typings'
+import Logo from "@/assets/image/logo.svg"
 
 interface LayoutProps {
   children: ReactNode
@@ -59,7 +60,7 @@ const Layout = async ({ children }: LayoutProps) => {
 
       <div className='hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6'>
         <Link href='/dashboard' className='flex h-16 shrink-0 items-center'>
-          <Icons.Logo className='h-8 w-auto text-indigo-600' />
+         <Image src={Logo} width={50} height={50} alt='logo'></Image>
         </Link>
 
         {friends.length > 0 ? (
@@ -85,8 +86,8 @@ const Layout = async ({ children }: LayoutProps) => {
                     <li key={option.id}>
                       <Link
                         href={option.href}
-                        className='text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                        <span className='text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'>
+                        className='text-gray-700 hover:text-[#FF9600] hover:bg-gray-50 group flex gap-3 rounded-md p-2 text-sm leading-6 font-semibold'>
+                        <span className='text-gray-400 border-gray-200 group-hover:border-[#FF9600] group-hover:text-[#FF9600] flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'>
                           <Icon className='h-4 w-4' />
                         </span>
 
